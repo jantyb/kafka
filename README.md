@@ -1,5 +1,5 @@
 
-* Docker
+* Docker,
     Jag har använt docker då jag arbetat med uppgiften och nedan tar jag med de kommandon som behövs om man
     vill köra kafka i en docker container. 
  
@@ -16,7 +16,7 @@
     För att köra kafka-skript i containern behöver man gå in i containern
     >docker exec -it kafka /bin/sh
 
-* Kafka
+* Kafka,
     Denna del antar jag är lika vare sig man kör kafka docker container eller en lokal installation av Kafka på datorn
     Gå till kafka foldern (i mitt fall var det)
     >cd /opt/kafka_2.12-2.4.1/bin
@@ -30,11 +30,11 @@
     För att se att det publiceras meddelanden i topicen kan man köra följande skript:
     >kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic syslog --from-beginning
 
-* Bygga
+* Bygga,
     För att testa koden behöver man bygga den, jag har använt intellij då jag byggt och för det mesta kört koden där 
     ifrån. Jag har lagt till i pom filen så att man bygger en fet jar som kan köras.
 
-* Köra
+* Köra,
     Man kan antingen exekvera main filen från intellij för att köra programmet, alternativt köra jar filen
     från konsolen:
     >java -jar kafkalabb-1.0-SNAPSHOT-jar-with-dependencies.jar

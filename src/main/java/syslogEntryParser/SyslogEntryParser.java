@@ -86,7 +86,7 @@ public class SyslogEntryParser {
         if (matcher.find()) {
             processName = matcher.group();
         }
-        processName = processName.substring(4 + hostname.length(), processName.length() - 1);
+        processName = processName.substring(5 + hostname.length(), processName.length() - 1);
 
         return processName;
     }
