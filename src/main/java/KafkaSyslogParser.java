@@ -1,9 +1,14 @@
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class KafkaSyslogParser {
+
+    private static final Logger LOGG = LogManager.getLogger(KafkaSyslogParser.class.getName());
 
     public static void main(String[] args) {
         System.out.println("Starting.");
@@ -40,7 +45,8 @@ public class KafkaSyslogParser {
         syslogMessageConsumer.close();
 
         entries.forEach((entry)->{
-            System.out.println("entries:" + entry.toString());
+            LOGG.info("entries:" + entry.toString());
+            //System.out.println("entries:" + entry.toString());
         });
 
     }

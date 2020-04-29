@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import syslogEntryParser.*;
 import syslogEntryParser.Process;
+
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -30,8 +31,8 @@ class SyslogEntryTest {
             LocalDateTime timeNow = LocalDateTime.now();
             entry = new SyslogEntry(timeNow, helaMeddelandet, agent, host, event, process);
 
-        }catch (Exception e){
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
@@ -40,8 +41,7 @@ class SyslogEntryTest {
     void syslogEntryToJson() {
         ObjectMapper Obj = new ObjectMapper();
         try {
-            String jsonStr = Obj.writeValueAsString(entry);
-            System.out.println(jsonStr);
+            Obj.writeValueAsString(entry);
         } catch (IOException e) {
             e.printStackTrace();
         }
